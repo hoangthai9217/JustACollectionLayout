@@ -17,8 +17,6 @@ class ServiceCell: UICollectionViewCell {
         super.awakeFromNib()
         
     }
-    
-    
 
 }
 

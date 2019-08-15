@@ -11,6 +11,7 @@ import UIKit
 class HomeViewController: UIViewController {
     
     @IBOutlet private weak var collectionView: UICollectionView!
+    private let refreshControl = UIRefreshControl(frame: .zero)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,9 @@ class HomeViewController: UIViewController {
     }
     
     private func configureCollectionView() {
+        
+        configureFreshControl()
+        
         collectionView.register(HeaderView.nib, forSupplementaryViewOfKind: HomeCollectionViewLayout.Component.header.kind, withReuseIdentifier: HomeCollectionViewLayout.Component.header.id)
         collectionView.register(OverlayView.nib, forSupplementaryViewOfKind: HomeCollectionViewLayout.Component.overlayCell.kind, withReuseIdentifier: HomeCollectionViewLayout.Component.overlayCell.id)
         collectionView.register(HelloView.nib, forSupplementaryViewOfKind: HomeCollectionViewLayout.Component.helloCell.kind, withReuseIdentifier: HomeCollectionViewLayout.Component.helloCell.id)
@@ -38,6 +42,26 @@ class HomeViewController: UIViewController {
             layout.settings.sectionsHeaderSize = CGSize(width: screenSize.width - layout.settings.componentPadding * 2, height: 40)
         }
         
+    }
+    
+    private func configureFreshControl() {
+        
+        refreshControl.bounds = CGRect(x: refreshControl.bounds.origin.x,
+                                       y: 30,
+                                       width: refreshControl.bounds.size.width,
+                                       height: refreshControl.bounds.size.height)
+        
+        collectionView.refreshControl = refreshControl
+        refreshControl.tintColor = .white
+        refreshControl.addTarget(self, action: #selector(refreshTableView), for: .valueChanged)
+    }
+    
+    @objc func refreshTableView() {
+//        refreshControl.startAnimation()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+//            self.refreshView.stopAnimation()
+            self.refreshControl.endRefreshing()
+        }
     }
 
 }

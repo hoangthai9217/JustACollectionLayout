@@ -18,6 +18,7 @@
 		FB6B35B023053127009C34C2 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B35AE23053127009C34C2 /* ServiceCell.swift */; };
 		FB6B35B123053127009C34C2 /* ServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6B35AF23053127009C34C2 /* ServiceCell.xib */; };
 		FB6DBFB4230547C80099D3F2 /* HomeCustomLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6DBFB3230547C80099D3F2 /* HomeCustomLayoutAttributes.swift */; };
+		FB6DBFB6230571100099D3F2 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6DBFB5230571100099D3F2 /* VisualEffectView.swift */; };
 		FB7445C92303DD7300AC65BC /* HomeCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7445C82303DD7300AC65BC /* HomeCollectionViewLayout.swift */; };
 		FB7445CC2303DDA300AC65BC /* HomeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7445CB2303DDA300AC65BC /* HomeDataModel.swift */; };
 		FBE5B0DC2303061A00315B74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE5B0DB2303061A00315B74 /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 		FB6B35AE23053127009C34C2 /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
 		FB6B35AF23053127009C34C2 /* ServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
 		FB6DBFB3230547C80099D3F2 /* HomeCustomLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCustomLayoutAttributes.swift; sourceTree = "<group>"; };
+		FB6DBFB5230571100099D3F2 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		FB7445C82303DD7300AC65BC /* HomeCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewLayout.swift; sourceTree = "<group>"; };
 		FB7445CB2303DDA300AC65BC /* HomeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataModel.swift; sourceTree = "<group>"; };
 		FBE5B0D82303061A00315B74 /* home-true-money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "home-true-money.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +76,7 @@
 				FB6B35AB2305308E009C34C2 /* DefaultSectionHeader.xib */,
 				FB6B35AE23053127009C34C2 /* ServiceCell.swift */,
 				FB6B35AF23053127009C34C2 /* ServiceCell.xib */,
+				FB6DBFB5230571100099D3F2 /* VisualEffectView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				FB6B35A423050A6E009C34C2 /* OverlayView.swift in Sources */,
 				FB7445CC2303DDA300AC65BC /* HomeDataModel.swift in Sources */,
 				FB6B35A82305109D009C34C2 /* HelloView.swift in Sources */,
+				FB6DBFB6230571100099D3F2 /* VisualEffectView.swift in Sources */,
 				FBE5B0F0230306A800315B74 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
