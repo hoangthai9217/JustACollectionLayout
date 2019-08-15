@@ -7,21 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB6B35A023050A5C009C34C2 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B359E23050A5C009C34C2 /* HeaderView.swift */; };
+		FB6B35A123050A5C009C34C2 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6B359F23050A5C009C34C2 /* HeaderView.xib */; };
+		FB6B35A423050A6E009C34C2 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B35A223050A6E009C34C2 /* OverlayView.swift */; };
+		FB6B35A523050A6E009C34C2 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6B35A323050A6E009C34C2 /* OverlayView.xib */; };
+		FB6B35A82305109D009C34C2 /* HelloView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B35A62305109D009C34C2 /* HelloView.swift */; };
+		FB6B35A92305109D009C34C2 /* HelloView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6B35A72305109D009C34C2 /* HelloView.xib */; };
+		FB6B35AC2305308E009C34C2 /* DefaultSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B35AA2305308E009C34C2 /* DefaultSectionHeader.swift */; };
+		FB6B35AD2305308E009C34C2 /* DefaultSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6B35AB2305308E009C34C2 /* DefaultSectionHeader.xib */; };
+		FB6B35B023053127009C34C2 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6B35AE23053127009C34C2 /* ServiceCell.swift */; };
+		FB6B35B123053127009C34C2 /* ServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6B35AF23053127009C34C2 /* ServiceCell.xib */; };
+		FB6DBFB4230547C80099D3F2 /* HomeCustomLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6DBFB3230547C80099D3F2 /* HomeCustomLayoutAttributes.swift */; };
+		FB7445C92303DD7300AC65BC /* HomeCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7445C82303DD7300AC65BC /* HomeCollectionViewLayout.swift */; };
+		FB7445CC2303DDA300AC65BC /* HomeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7445CB2303DDA300AC65BC /* HomeDataModel.swift */; };
 		FBE5B0DC2303061A00315B74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE5B0DB2303061A00315B74 /* AppDelegate.swift */; };
-		FBE5B0DE2303061A00315B74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE5B0DD2303061A00315B74 /* ViewController.swift */; };
-		FBE5B0E12303061A00315B74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBE5B0DF2303061A00315B74 /* Main.storyboard */; };
 		FBE5B0E32303061B00315B74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBE5B0E22303061B00315B74 /* Assets.xcassets */; };
 		FBE5B0E62303061B00315B74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBE5B0E42303061B00315B74 /* LaunchScreen.storyboard */; };
+		FBE5B0F0230306A800315B74 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE5B0EE230306A800315B74 /* HomeViewController.swift */; };
+		FBE5B0F1230306A800315B74 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE5B0EF230306A800315B74 /* HomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB6B359E23050A5C009C34C2 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		FB6B359F23050A5C009C34C2 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		FB6B35A223050A6E009C34C2 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		FB6B35A323050A6E009C34C2 /* OverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
+		FB6B35A62305109D009C34C2 /* HelloView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloView.swift; sourceTree = "<group>"; };
+		FB6B35A72305109D009C34C2 /* HelloView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelloView.xib; sourceTree = "<group>"; };
+		FB6B35AA2305308E009C34C2 /* DefaultSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSectionHeader.swift; sourceTree = "<group>"; };
+		FB6B35AB2305308E009C34C2 /* DefaultSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultSectionHeader.xib; sourceTree = "<group>"; };
+		FB6B35AE23053127009C34C2 /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
+		FB6B35AF23053127009C34C2 /* ServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
+		FB6DBFB3230547C80099D3F2 /* HomeCustomLayoutAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCustomLayoutAttributes.swift; sourceTree = "<group>"; };
+		FB7445C82303DD7300AC65BC /* HomeCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewLayout.swift; sourceTree = "<group>"; };
+		FB7445CB2303DDA300AC65BC /* HomeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataModel.swift; sourceTree = "<group>"; };
 		FBE5B0D82303061A00315B74 /* home-true-money.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "home-true-money.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBE5B0DB2303061A00315B74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FBE5B0DD2303061A00315B74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FBE5B0E02303061A00315B74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FBE5B0E22303061B00315B74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBE5B0E52303061B00315B74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBE5B0E72303061B00315B74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBE5B0EE230306A800315B74 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FBE5B0EF230306A800315B74 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +61,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB6B359D230509A0009C34C2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB6B359E23050A5C009C34C2 /* HeaderView.swift */,
+				FB6B359F23050A5C009C34C2 /* HeaderView.xib */,
+				FB6B35A223050A6E009C34C2 /* OverlayView.swift */,
+				FB6B35A323050A6E009C34C2 /* OverlayView.xib */,
+				FB6B35A62305109D009C34C2 /* HelloView.swift */,
+				FB6B35A72305109D009C34C2 /* HelloView.xib */,
+				FB6B35AA2305308E009C34C2 /* DefaultSectionHeader.swift */,
+				FB6B35AB2305308E009C34C2 /* DefaultSectionHeader.xib */,
+				FB6B35AE23053127009C34C2 /* ServiceCell.swift */,
+				FB6B35AF23053127009C34C2 /* ServiceCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FB7445CA2303DD7F00AC65BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FB7445CB2303DDA300AC65BC /* HomeDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FBE5B0CF2303061A00315B74 = {
 			isa = PBXGroup;
 			children = (
@@ -55,13 +106,41 @@
 			isa = PBXGroup;
 			children = (
 				FBE5B0DB2303061A00315B74 /* AppDelegate.swift */,
-				FBE5B0DD2303061A00315B74 /* ViewController.swift */,
-				FBE5B0DF2303061A00315B74 /* Main.storyboard */,
+				FBE5B0F52303074600315B74 /* Application */,
 				FBE5B0E22303061B00315B74 /* Assets.xcassets */,
-				FBE5B0E42303061B00315B74 /* LaunchScreen.storyboard */,
 				FBE5B0E72303061B00315B74 /* Info.plist */,
+				FBE5B0E42303061B00315B74 /* LaunchScreen.storyboard */,
 			);
 			path = "home-true-money";
+			sourceTree = "<group>";
+		};
+		FBE5B0ED2303068C00315B74 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FBE5B0EE230306A800315B74 /* HomeViewController.swift */,
+				FBE5B0EF230306A800315B74 /* HomeViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FBE5B0F2230306B500315B74 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				FB7445C82303DD7300AC65BC /* HomeCollectionViewLayout.swift */,
+				FB6DBFB3230547C80099D3F2 /* HomeCustomLayoutAttributes.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		FBE5B0F52303074600315B74 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				FB6B359D230509A0009C34C2 /* View */,
+				FB7445CA2303DD7F00AC65BC /* Model */,
+				FBE5B0ED2303068C00315B74 /* Controller */,
+				FBE5B0F2230306B500315B74 /* Layout */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,9 +201,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB6B35AD2305308E009C34C2 /* DefaultSectionHeader.xib in Resources */,
+				FB6B35B123053127009C34C2 /* ServiceCell.xib in Resources */,
 				FBE5B0E62303061B00315B74 /* LaunchScreen.storyboard in Resources */,
 				FBE5B0E32303061B00315B74 /* Assets.xcassets in Resources */,
-				FBE5B0E12303061A00315B74 /* Main.storyboard in Resources */,
+				FB6B35A523050A6E009C34C2 /* OverlayView.xib in Resources */,
+				FBE5B0F1230306A800315B74 /* HomeViewController.xib in Resources */,
+				FB6B35A123050A5C009C34C2 /* HeaderView.xib in Resources */,
+				FB6B35A92305109D009C34C2 /* HelloView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,22 +219,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBE5B0DE2303061A00315B74 /* ViewController.swift in Sources */,
+				FB6B35AC2305308E009C34C2 /* DefaultSectionHeader.swift in Sources */,
+				FB6B35A023050A5C009C34C2 /* HeaderView.swift in Sources */,
+				FB7445C92303DD7300AC65BC /* HomeCollectionViewLayout.swift in Sources */,
+				FB6B35B023053127009C34C2 /* ServiceCell.swift in Sources */,
+				FB6DBFB4230547C80099D3F2 /* HomeCustomLayoutAttributes.swift in Sources */,
 				FBE5B0DC2303061A00315B74 /* AppDelegate.swift in Sources */,
+				FB6B35A423050A6E009C34C2 /* OverlayView.swift in Sources */,
+				FB7445CC2303DDA300AC65BC /* HomeDataModel.swift in Sources */,
+				FB6B35A82305109D009C34C2 /* HelloView.swift in Sources */,
+				FBE5B0F0230306A800315B74 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FBE5B0DF2303061A00315B74 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FBE5B0E02303061A00315B74 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FBE5B0E42303061B00315B74 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,14 +366,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = PVS33LKAU9;
 				INFOPLIST_FILE = "home-true-money/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "peanut36k.io.home-true-money";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Wildcard Development";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -299,14 +386,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "home-true-money/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "peanut36k.io.home-true-money";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
