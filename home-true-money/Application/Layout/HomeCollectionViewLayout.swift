@@ -94,7 +94,7 @@ extension HomeCollectionViewLayout {
         
         for section in 0..<collectionView.numberOfSections {
             let sectionHeaderAttibutes = HomeCustomLayoutAttributes(forSupplementaryViewOfKind: Component.sectionHeader.kind, with: IndexPath(item: 0, section: section))
-            sectionHeaderAttibutes.frame = CGRect(x: settings.componentPadding, y: contentHeight, width: componentWidth(.sectionHeader), height: componentHeight(.sectionHeader))
+            sectionHeaderAttibutes.frame = CGRect(x: settings.componentPadding, y: contentHeight + settings.cellLineSpace, width: componentWidth(.sectionHeader), height: componentHeight(.sectionHeader))
             sectionHeaderAttibutes.zIndex = zIndex
             zIndex += 1
             contentHeight = sectionHeaderAttibutes.frame.maxY

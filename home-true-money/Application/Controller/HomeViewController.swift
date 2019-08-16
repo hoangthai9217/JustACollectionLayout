@@ -10,18 +10,25 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    @IBOutlet private weak var collectionView: UICollectionView!
+    private let statusBarCoverageView = UIView()
+    private let refreshControl = UIRefreshControl(frame: .zero)
+    
+    private var statusBarStyle: UIStatusBarStyle = .lightContent
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        return statusBarStyle
     }
     
-    @IBOutlet private weak var collectionView: UICollectionView!
-    private let refreshControl = UIRefreshControl(frame: .zero)
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return .fade
+    }
     
     private let dataSource = HomeDataModel.sections
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
+        configureStatusBarView()
     }
     
     private func configureCollectionView() {
@@ -36,6 +43,7 @@ class HomeViewController: UIViewController {
         collectionView.register(ServiceCell.nib, forCellWithReuseIdentifier: HomeCollectionViewLayout.Component.serviceCell.id)
         
         collectionView.dataSource = self
+        collectionView.delegate = self
         
         if let layout = collectionView.collectionViewLayout as? HomeCollectionViewLayout {
             let screenSize = UIScreen.main.bounds.size
@@ -45,6 +53,20 @@ class HomeViewController: UIViewController {
             layout.settings.sectionsHeaderSize = CGSize(width: screenSize.width - layout.settings.componentPadding * 2, height: 40)
         }
         
+    }
+    
+    private func configureStatusBarView() {
+        statusBarCoverageView.backgroundColor = .white
+        statusBarCoverageView.alpha = 0
+        statusBarCoverageView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(statusBarCoverageView)
+        NSLayoutConstraint.activate([
+            statusBarCoverageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            statusBarCoverageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0),
+            statusBarCoverageView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0)
+            ])
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        statusBarCoverageView.addConstraint(NSLayoutConstraint(item: statusBarCoverageView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: statusBarHeight))
     }
     
     private func configureFreshControl() {
@@ -106,6 +128,34 @@ extension HomeViewController: UICollectionViewDataSource {
             
         default: fatalError()
         }
+    }
+    
+}
+
+extension HomeViewController: UICollectionViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let max: CGFloat = 40
+        let y = scrollView.contentOffset.y
+        let alpha = y <= max ? y/max : 0.8
+        statusBarCoverageView.alpha = alpha + 0.2
+        
+        if alpha > 0 {
+            if statusBarStyle != .default {
+                statusBarStyle = .default
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.setNeedsStatusBarAppearanceUpdate()
+                })
+            }
+        } else {
+            if statusBarStyle != .lightContent {
+                statusBarStyle = .lightContent
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.setNeedsStatusBarAppearanceUpdate()
+                })
+            }
+        }
+        
     }
     
 }
