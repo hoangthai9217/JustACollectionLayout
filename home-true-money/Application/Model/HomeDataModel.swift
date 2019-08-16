@@ -13,3 +13,7 @@ final class HomeDataModel {
     
     
 }
+
+final class ServiceModel {
+    
+}

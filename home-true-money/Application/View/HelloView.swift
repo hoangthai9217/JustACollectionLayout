@@ -24,7 +24,12 @@ class HelloView: UICollectionReusableView {
     }
     
     private func configureTitleLabel() {
-        title.text = "Good day, Hoang Thai!"
+        let string = "Good day, Hoang Thai!"
+        let attributedString = NSMutableAttributedString(string: string)
+        attributedString.addAttribute(NSAttributedString.Key.font, value: UIFont.boldSystemFont(ofSize: 17), range: (string as NSString).range(of: "Hoang Thai"))
+        title.attributedText = attributedString
+        title.textColor = .white
+        
     }
     
 }

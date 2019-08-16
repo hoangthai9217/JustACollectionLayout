@@ -15,7 +15,7 @@ class ServiceCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        backgroundColor = .yellow
     }
 
 }

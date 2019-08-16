@@ -16,11 +16,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
-        if #available(iOS 11.0, *) {
-            collectionView.contentInsetAdjustmentBehavior = .never
-        } else {
-            automaticallyAdjustsScrollViewInsets = false
-        }
     }
     
     private func configureCollectionView() {
@@ -32,11 +27,13 @@ class HomeViewController: UIViewController {
         collectionView.register(HelloView.nib, forSupplementaryViewOfKind: HomeCollectionViewLayout.Component.helloCell.kind, withReuseIdentifier: HomeCollectionViewLayout.Component.helloCell.id)
         collectionView.register(DefaultSectionHeader.nib, forSupplementaryViewOfKind: HomeCollectionViewLayout.Component.sectionHeader.kind, withReuseIdentifier: HomeCollectionViewLayout.Component.sectionHeader.id)
         
+        collectionView.register(ServiceCell.nib, forCellWithReuseIdentifier: HomeCollectionViewLayout.Component.serviceCell.id)
+        
         collectionView.dataSource = self
         
         if let layout = collectionView.collectionViewLayout as? HomeCollectionViewLayout {
             let screenSize = UIScreen.main.bounds.size
-            layout.settings.headerSize = CGSize(width: screenSize.width, height: 175)
+            layout.settings.headerSize = CGSize(width: screenSize.width, height: 132)
             layout.settings.helloCellSize = CGSize(width: screenSize.width - layout.settings.componentPadding * 2, height: 35)
             layout.settings.overlayCellSize = CGSize(width: screenSize.width - layout.settings.componentPadding * 2, height: 145)
             layout.settings.sectionsHeaderSize = CGSize(width: screenSize.width - layout.settings.componentPadding * 2, height: 40)
@@ -47,7 +44,7 @@ class HomeViewController: UIViewController {
     private func configureFreshControl() {
         
         refreshControl.bounds = CGRect(x: refreshControl.bounds.origin.x,
-                                       y: 30,
+                                       y: 0,
                                        width: refreshControl.bounds.size.width,
                                        height: refreshControl.bounds.size.height)
         
@@ -69,15 +66,16 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 20
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return section + 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell(frame: CGRect.zero)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewLayout.Component.serviceCell.id, for: indexPath)
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -99,7 +97,7 @@ extension HomeViewController: UICollectionViewDataSource {
             return supplementaryView
             
         default:
-            fatalError()
+             fatalError()
         }
     }
     

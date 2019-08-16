@@ -99,9 +99,38 @@ extension HomeCollectionViewLayout {
             zIndex += 1
             contentHeight = sectionHeaderAttibutes.frame.maxY
             cache[.sectionHeader]?[sectionHeaderAttibutes.indexPath] = sectionHeaderAttibutes
+            
+            /// Items
+            var currentContentWidth: CGFloat = 0
+            let contentWidth = collectionViewWidth - settings.componentPadding * 2
+            let serviceCellWidth = (contentWidth - (CGFloat(settings.numberItemsForRow - 1) * settings.componentPadding)) / CGFloat(settings.numberItemsForRow)
+            let serviceCellHeight = settings.serviceCellSize.height
+            
+            for item in 0..<collectionView.numberOfItems(inSection: section) {
+                let indexPath = IndexPath(item: item, section: section)
+                let serviceCellAttributes = HomeCustomLayoutAttributes(forCellWith: indexPath)
+                serviceCellAttributes.frame = CGRect(x: currentContentWidth + settings.componentPadding, y: contentHeight + settings.componentPadding, width: serviceCellWidth, height: serviceCellHeight)
+                serviceCellAttributes.zIndex = zIndex
+                zIndex += 1
+                cache[.serviceCell]?[indexPath] = serviceCellAttributes
+                
+                /// New line
+                if serviceCellAttributes.frame.maxX + serviceCellWidth > collectionViewWidth {
+                    currentContentWidth = 0
+                    contentHeight = serviceCellAttributes.frame.maxY
+                } else {
+                    /// Same line
+                    currentContentWidth = serviceCellAttributes.frame.maxX
+                }
+                
+                /// Last item
+                if item == collectionView.numberOfItems(inSection: section) - 1 {
+                    contentHeight = serviceCellAttributes.frame.maxY
+                }
+                
+            }
+            
         }
-        
-        
         
     }
     
@@ -133,33 +162,20 @@ extension HomeCollectionViewLayout {
         
     }
     
-//    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-//        return cache[.cell]?[indexPath]
-//    }
+    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        return cache[.serviceCell]?[indexPath]
+    }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         guard let collectionView = collectionView else { return nil }
         visibleLayoutAttributes.removeAll(keepingCapacity: true)
         
-//        let halfHeight = collectionViewHeight * 0.5
-//        let halfCellHeight = cellHeight * 0.5
-        
         for (type, elementInfos) in cache {
-            
             for (indexPath, attributes) in elementInfos {
-                
-//                attributes.parallax = .identity
-//                attributes.transform = .identity
-                
                 updateSupplementaryViews(type, attributes: attributes, collectionView: collectionView, indexPath: indexPath)
-                
                 if attributes.frame.intersects(rect) {
-//                    if type == .cell, settings.isParallaxOnCellsEnabled {
-//                        updateCells(attributes, halfHeight: halfHeight, halfCellHeight: halfCellHeight)
-//                    }
                     visibleLayoutAttributes.append(attributes)
                 }
-                
             }
         }
         
@@ -174,45 +190,10 @@ extension HomeCollectionViewLayout {
                 let translationY = contentOffset.y/acceleration > -settings.componentPadding ? contentOffset.y/acceleration : -settings.componentPadding
                 let translation = CGAffineTransform(translationX: 0, y: translationY)
                 attributes.transform = translation
-                attributes.blurRadius = abs(contentOffset.y/200)
+                attributes.blurRadius = abs(contentOffset.y/settings.upperOffSetLimit)
             } else {
                 attributes.transform = .identity
             }
-        }
-    }
-    
-    
-}
-
-final class HomeCollectionViewLayoutSettings {
-    
-    var componentPadding: CGFloat = 16
-    
-    var helloTopPadding: CGFloat = 61
-    
-    var headerSize = CGSize(width: 375, height: 200)
-    var sectionsHeaderSize: CGSize?
-    var helloCellSize = CGSize(width: 100, height: 30)
-    var overlayCellSize = CGSize(width: 100, height: 50)
-    var serviceCellSize: CGSize?
-    var promoCellSize: CGSize?
-    
-    func heightForComponent(_ component: HomeCollectionViewLayout.Component) -> CGFloat? {
-        return sizeForComponent(component)?.height
-    }
-    
-    func widthForComponent(_ component: HomeCollectionViewLayout.Component) -> CGFloat? {
-        return sizeForComponent(component)?.width
-    }
-    
-    private func sizeForComponent(_ component: HomeCollectionViewLayout.Component) -> CGSize? {
-        switch component {
-        case .header: return headerSize
-        case .helloCell: return helloCellSize
-        case .overlayCell: return overlayCellSize
-        case .promoCell: return promoCellSize
-        case .sectionHeader: return sectionsHeaderSize
-        case .serviceCell: return headerSize
         }
     }
     
