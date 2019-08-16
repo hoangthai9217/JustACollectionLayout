@@ -10,7 +10,7 @@
 
 ## Features
 - [x] Rubber effect bring good panning feeling
-- [x] Sketchy header
+- [x] Stretchy header
 
 ## Author
 Nong Hoang Thai
