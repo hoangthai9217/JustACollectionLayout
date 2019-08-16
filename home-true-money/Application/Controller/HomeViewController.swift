@@ -10,9 +10,15 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     @IBOutlet private weak var collectionView: UICollectionView!
     private let refreshControl = UIRefreshControl(frame: .zero)
-
+    
+    private let dataSource = HomeDataModel.sections
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
@@ -54,27 +60,27 @@ class HomeViewController: UIViewController {
     }
     
     @objc func refreshTableView() {
-//        refreshControl.startAnimation()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-//            self.refreshView.stopAnimation()
             self.refreshControl.endRefreshing()
         }
     }
-
+    
 }
 
 extension HomeViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 10
+        return dataSource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return section + 3
+        return dataSource[section].services.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewLayout.Component.serviceCell.id, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewLayout.Component.serviceCell.id, for: indexPath) as! ServiceCell
+        let serviceModel = dataSource[indexPath.section].services[indexPath.item]
+        cell.configure(serviceModel)
         return cell
     }
     
@@ -93,11 +99,12 @@ extension HomeViewController: UICollectionViewDataSource {
             return supplementaryView
             
         case HomeCollectionViewLayout.Component.sectionHeader.kind:
-            let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeCollectionViewLayout.Component.sectionHeader.id, for: indexPath)
+            let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeCollectionViewLayout.Component.sectionHeader.id, for: indexPath) as! DefaultSectionHeader
+            let title = dataSource[indexPath.section].title
+            supplementaryView.configure(title: title)
             return supplementaryView
             
-        default:
-             fatalError()
+        default: fatalError()
         }
     }
     

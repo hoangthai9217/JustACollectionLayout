@@ -17,4 +17,8 @@ class DefaultSectionHeader: UICollectionReusableView {
         
     }
     
+    func configure(title: String) {
+        self.title.text = title
+    }
+    
 }

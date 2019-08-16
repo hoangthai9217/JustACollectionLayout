@@ -109,7 +109,7 @@ extension HomeCollectionViewLayout {
             for item in 0..<collectionView.numberOfItems(inSection: section) {
                 let indexPath = IndexPath(item: item, section: section)
                 let serviceCellAttributes = HomeCustomLayoutAttributes(forCellWith: indexPath)
-                serviceCellAttributes.frame = CGRect(x: currentContentWidth + settings.componentPadding, y: contentHeight + settings.componentPadding, width: serviceCellWidth, height: serviceCellHeight)
+                serviceCellAttributes.frame = CGRect(x: currentContentWidth + settings.componentPadding, y: contentHeight + settings.cellLineSpace, width: serviceCellWidth, height: serviceCellHeight)
                 serviceCellAttributes.zIndex = zIndex
                 zIndex += 1
                 cache[.serviceCell]?[indexPath] = serviceCellAttributes

@@ -10,6 +10,8 @@ import UIKit
 
 final class HomeCollectionViewLayoutSettings {
     
+    var cellLineSpace: CGFloat = 8
+    
     var componentPadding: CGFloat = 16
     
     var helloTopPadding: CGFloat = 20
@@ -21,7 +23,7 @@ final class HomeCollectionViewLayoutSettings {
     var sectionsHeaderSize: CGSize?
     var helloCellSize = CGSize(width: 100, height: 30)
     var overlayCellSize = CGSize(width: 100, height: 50)
-    var serviceCellSize = CGSize(width: 100, height: 100)
+    var serviceCellSize = CGSize(width: 100, height: 90)
     var promoCellSize: CGSize?
     
     func heightForComponent(_ component: HomeCollectionViewLayout.Component) -> CGFloat? {

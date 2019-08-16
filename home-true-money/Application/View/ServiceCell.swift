@@ -13,9 +13,9 @@ class ServiceCell: UICollectionViewCell {
     @IBOutlet private weak var image: UIImageView!
     @IBOutlet private weak var title: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        backgroundColor = .yellow
+    func configure(_ item: ServiceModel) {
+        image.image = item.image
+        title.text = item.title
     }
 
 }
