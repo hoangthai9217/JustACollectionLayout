@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="HelloView" customModule="home_true_money" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRC-WQ-KM5">
+                    <rect key="frame" x="50" y="14.5" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="dg2-pb-Ry7">
+                    <rect key="frame" x="0.0" y="8" width="34" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="NeV-tM-af8"/>
+                        <constraint firstAttribute="width" constant="34" id="hF2-Wk-GbB"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVg-Fu-xNg">
+                    <rect key="frame" x="280" y="0.0" width="40" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="1oG-B9-njO"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="notification"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mej-Ix-QTA">
+                    <rect key="frame" x="240" y="0.0" width="40" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="gSw-jQ-ydZ"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="search"/>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="KVg-Fu-xNg" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="170-LU-Z02"/>
+                <constraint firstItem="eRC-WQ-KM5" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="4Gn-Np-eLQ"/>
+                <constraint firstAttribute="bottom" secondItem="Mej-Ix-QTA" secondAttribute="bottom" id="5h5-SP-YLS"/>
+                <constraint firstItem="dg2-pb-Ry7" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="FUB-Ff-E2A"/>
+                <constraint firstItem="KVg-Fu-xNg" firstAttribute="leading" secondItem="Mej-Ix-QTA" secondAttribute="trailing" id="LJq-Vl-eSZ"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="KVg-Fu-xNg" secondAttribute="trailing" id="SlL-fs-msl"/>
+                <constraint firstItem="eRC-WQ-KM5" firstAttribute="leading" secondItem="dg2-pb-Ry7" secondAttribute="trailing" constant="16" id="cCd-zn-a7e"/>
+                <constraint firstItem="KVg-Fu-xNg" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="j7W-jW-tLJ"/>
+                <constraint firstItem="Mej-Ix-QTA" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="rra-3e-Gmd"/>
+                <constraint firstItem="dg2-pb-Ry7" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="tqN-Hm-9OU"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <connections>
+                <outlet property="title" destination="eRC-WQ-KM5" id="hb2-7e-Sgc"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="avatar" width="34" height="34"/>
+        <image name="notification" width="24" height="24"/>
+        <image name="search" width="24" height="24"/>
+    </resources>
+</document>
